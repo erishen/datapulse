@@ -5,7 +5,7 @@ source, ask business questions in plain language, and the **LLM agent** writes
 read-only SQL, answers from the real data, and can **auto-generate ECharts
 dashboards**.
 
-> [中文文档（Chinese）](README.zh.md)
+> [Chinese version](README.zh.md)
 
 ## Quick start
 
@@ -52,10 +52,10 @@ charts. Highlights:
   CSV), plus a **draggable resize handle** for the sidebar width (persisted).
 - **Starter questions** are generated on demand against the live schema (loading
   spinner while they generate, results cached by schema fingerprint). A
-  **「↻ 重新生成」** button re-runs generation with `--force`. The chip list is
+  **"↻ Regenerate"** button re-runs generation with `--force`. The chip list is
   guaranteed to contain a chart question so the dashboard feature stays reachable.
 - **Follow-up question chips** after each answer (with a chart intent one).
-- **Dashboard cards** render inline with ECharts and include a **「⛶ 全屏」**
+- **Dashboard cards** render inline with ECharts and include a **"⛶ Fullscreen"**
   button (ESC / ✕ to close).
 - **Privacy**: answer copy is gated behind a re-confirm when the answer is
   flagged as risky; connection strings are **redacted** in the UI
@@ -80,13 +80,13 @@ Lift the versioned Postgres (Dockerfile + compose under `docker/`), seed it, and
 docker compose -f docker/compose.yml up -d --build   # postgres on :5433, auto schema via init/
 export CRM_DATABASE_URL="postgres://postgres:postgres@127.0.0.1:5433/crm"  # also in .env
 npm run crm-seed          # auto-creates the DB + tables, inserts ~460 rows
-npm run crm-ask -- "各行业已成交商机金额排名"
+npm run crm-ask -- "closed deal amount ranking by industry"
 ```
 
 `crm-seed` also creates the database if missing and re-seeds deterministically.
 Tear down with `docker compose -f docker/compose.yml down` (add `-v` to wipe the data volume).
 
-### MySQL 图书借阅 demo
+### MySQL library demo
 
 Lift the MySQL service (`docker/compose.yml`), seed it, and ask:
 
@@ -94,7 +94,7 @@ Lift the MySQL service (`docker/compose.yml`), seed it, and ask:
 docker compose -f docker/compose.yml up -d mysqldb       # mysql:8.4 on :3307, auto-creates `library`
 export MYSQL_DATABASE_URL="mysql://root:root@127.0.0.1:3307/library"  # also in .env
 npm run mysql-seed          # auto-creates tables, inserts ~520 rows
-npm run mysql-ask -- "借出最多的5本图书"
+npm run mysql-ask -- "top 5 most-borrowed books"
 ```
 
 Every source uses the **same Text2SQL pipeline** with live schema introspection
@@ -150,7 +150,7 @@ Environment (via `.env`):
 
 ## Architecture
 
-> 完整架构（分层、数据流、缓存、安全边界）见 [`docs/architecture.md`](docs/architecture.md)；Text2SQL 管线设计见 [`docs/text2sql.md`](docs/text2sql.md)。
+> Full architecture (layers, data flow, caching, security boundaries): [`docs/architecture.md`](docs/architecture.md). Text2SQL pipeline design: [`docs/text2sql.md`](docs/text2sql.md).
 
 ```
 src/
