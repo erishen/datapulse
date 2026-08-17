@@ -205,3 +205,7 @@ self-contained HTML file.
 - The desktop spawns the CLI with `shell:false` and bounds/type-checks every IPC
   argument; a timeout kills the hung child process instead of leaving it running.
 - Dashboard HTML is a local file; it loads ECharts from `cdn.jsdelivr.net`.
+
+## Related Articles
+
+- [Text2SQL Deterministic Pipeline + ReAct Dual-Path: Architecture Breakdown of datapulse AI BI Workbench](https://erishen.cn/datapulse-en/)

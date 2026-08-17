@@ -175,3 +175,7 @@ docs/text2sql.md          Text2SQL 管线设计笔记
 - 连接串在进入 UI 前**自动脱敏**——凭据永不渲染，截屏/投屏也不泄漏。
 - 桌面端用 `shell:false` 派生 CLI，并对每个 IPC 参数做类型/长度校验；超时会主动杀掉挂起的子进程，而不是任其常驻。
 - 导出的看板为本地 HTML，ECharts 从 `cdn.jsdelivr.net` 加载。
+
+## 相关文章
+
+- [Text2SQL 确定性管线 + ReAct 双路径：datapulse AI BI 工作台架构解析](https://erishen.cn/datapulse/)
