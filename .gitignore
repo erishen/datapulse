@@ -5,4 +5,4 @@ output/
 .env
 *.db
 *.db-shm
-*.db-wal
+*.db-wal.serena
