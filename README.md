@@ -207,5 +207,4 @@ self-contained HTML file.
 - Dashboard HTML is a local file; it loads ECharts from `cdn.jsdelivr.net`.
 
 ## Related Articles
-
 - [Text2SQL Deterministic Pipeline + ReAct Dual-Path: Architecture Breakdown of datapulse AI BI Workbench](https://erishen.cn/datapulse-en/)

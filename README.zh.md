@@ -177,5 +177,4 @@ docs/text2sql.md          Text2SQL 管线设计笔记
 - 导出的看板为本地 HTML，ECharts 从 `cdn.jsdelivr.net` 加载。
 
 ## 相关文章
-
 - [Text2SQL 确定性管线 + ReAct 双路径：datapulse AI BI 工作台架构解析](https://erishen.cn/datapulse/)
