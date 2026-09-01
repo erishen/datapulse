@@ -6,7 +6,7 @@
 # committed. After a fresh clone run `make init` (or `make seed`) to rebuild it.
 # ===========================================================================
 
-.PHONY: install init seed reset db-remove ask dashboard build typecheck test dev clean crm-up crm-down crm-seed crm-ask mysql-up mysql-down mysql-seed mysql-ask csv-import starters help
+.PHONY: install init seed reset db-remove ask dashboard build typecheck test dev desktop-dev clean crm-up crm-down crm-seed crm-ask mysql-up mysql-down mysql-seed mysql-ask csv-import starters help
 
 install:
 	npm install
@@ -42,6 +42,9 @@ test: ## Run the test suite (node:test + tsx)
 
 dev: ## Launch the Electron desktop UI — kills leftover electron/vite first, then rebuilds
 	npm run desktop
+
+desktop-dev: ## Launch the Electron desktop UI in dev mode (Vite + Electron HMR, one command)
+	npm --prefix desktop run dev:all
 
 crm-up: ## Start the CRM PostgreSQL service (compose crmdb, :5433)
 	docker compose -f docker/compose.yml up -d --build crmdb
