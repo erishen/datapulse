@@ -7,3 +7,6 @@ output/
 *.db-shm
 *.db-wal.serena
 .serena/
+
+# npm config (may contain registry auth tokens; keep local only)
+.npmrc
